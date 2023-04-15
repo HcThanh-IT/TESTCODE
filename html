@@ -2,3 +2,12 @@
 // body-parser
 var bodyparser = require('body-parser');
 var urlParser = bodyparser.urlencoded({extended:false});
+
+
+
+app.post("/students",urlParser,(req, res)=>{
+    var sv=req.body;
+    var result = dssv.find(item => item.MaSV===sv.MaSV);
+    console.log(result);
+    res.send(req.body);
+});
